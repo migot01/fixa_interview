@@ -7,7 +7,8 @@
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
     "test:ui": "playwright test --ui",
-    "test:report": "playwright show-report"
+    "test:report": "playwright show-report",
+    "test:env": "node -e \"require('dotenv').config(); console.log('Environment loaded:', { email: process.env.FIXA_EMAIL, baseUrl: process.env.FIXA_BASE_URL });\""
   },
   "devDependencies": {
     "@playwright/test": "^1.35.0",
@@ -15,6 +16,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "dotenv": "^17.2.2",
     "playwright": "^1.35.0"
   }
 }

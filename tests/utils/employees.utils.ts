@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test';
+import { TEST_DATA } from '../fixtures/test-data';
 
 export class EmployeesPageUtils {
   constructor(private page: Page) {}
@@ -58,7 +59,7 @@ export class EmployeesPageUtils {
 
   // Actions
   async navigateToEmployees() {
-    await this.page.goto('/employees?page=1&perPage=10');
+    await this.page.goto(`${TEST_DATA.urls.employees}?page=1&perPage=10`);
     await this.page.waitForLoadState('domcontentloaded');
     await this.page.waitForTimeout(3000); // Additional wait for data to load
   }

@@ -1,4 +1,5 @@
 import { test as base, expect } from '@playwright/test';
+import { TEST_DATA } from './test-data';
 
 export interface AuthUser {
   email: string;
@@ -17,8 +18,8 @@ export const test = base.extend<{ authenticatedPage: any }>({
       await page.waitForLoadState('domcontentloaded');
 
       // Fill in login credentials
-      await page.fill('input[type="text"], input[name="username"], input[placeholder*="Username"], input[placeholder*="username"]', 'tafara@fixarwanda.com');
-      await page.fill('input[type="password"], input[name="password"], input[placeholder*="Password"], input[placeholder*="password"]', '0784526338Mit2@');
+      await page.fill('input[type="text"], input[name="username"], input[placeholder*="Username"], input[placeholder*="username"]', TEST_DATA.credentials.email);
+      await page.fill('input[type="password"], input[name="password"], input[placeholder*="Password"], input[placeholder*="password"]', TEST_DATA.credentials.password);
 
       // Click login button
       await page.click('button[type="submit"]');

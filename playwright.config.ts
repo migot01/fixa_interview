@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
+// Load environment variables
+require('dotenv').config();
+
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
@@ -22,7 +25,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://app.staging.fixahr.com',
+    baseURL: process.env.FIXA_BASE_URL || 'https://app.staging.fixahr.com',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     /* Take screenshot on failure */

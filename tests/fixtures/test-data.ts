@@ -1,11 +1,14 @@
+// Load environment variables
+require('dotenv').config();
+
 export const TEST_DATA = {
   credentials: {
-    email: 'tafara@fixarwanda.com',
-    password: '0784526338Mit2@'
+    email: process.env.FIXA_EMAIL || 'tafara@fixarwanda.com',
+    password: process.env.FIXA_PASSWORD || '0784526338Mit2@'
   },
   urls: {
-    login: '/login',
-    employees: '/employees',
+    login: process.env.FIXA_LOGIN_URL || '/login',
+    employees: process.env.FIXA_EMPLOYEES_URL || '/employees',
     employeesWithPagination: '/employees?page=1&perPage=10'
   },
   expectedData: {

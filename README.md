@@ -26,6 +26,16 @@ npm install
 npx playwright install
 ```
 
+4. Set up environment variables:
+```bash
+# Copy the example environment file
+cp .env.example .env
+
+# Edit the .env file with your test credentials
+# FIXA_EMAIL=your-email@example.com
+# FIXA_PASSWORD=your-password
+```
+
 ## 🧪 Running Tests
 
 ### Run All Tests
@@ -131,9 +141,22 @@ fixa_interview/
 - **Videos**: Retained on failure
 - **Traces**: On first retry
 
-### Test Credentials
-- **Email**: `tafara@fixarwanda.com`
-- **Password**: `0784526338Mit2@`
+### Environment Variables
+
+The test suite uses environment variables for configuration. Create a `.env` file based on `.env.example`:
+
+```bash
+# Fixa HR Test Credentials
+FIXA_EMAIL=tafara@fixarwanda.com
+FIXA_PASSWORD=0784526338Mit2@
+
+# Test Configuration
+FIXA_BASE_URL=https://app.staging.fixahr.com
+FIXA_LOGIN_URL=/login
+FIXA_EMPLOYEES_URL=/employees
+```
+
+**Security Note**: Never commit the `.env` file to version control. The `.env.example` file shows the required variables without sensitive data.
 
 ## 🏛️ Architecture
 
