@@ -147,8 +147,8 @@ The test suite uses environment variables for configuration. Create a `.env` fil
 
 ```bash
 # Fixa HR Test Credentials
-FIXA_EMAIL=tafara@fixarwanda.com
-FIXA_PASSWORD=0784526338Mit2@
+FIXA_EMAIL=your-email
+FIXA_PASSWORD=your-password
 
 # Test Configuration
 FIXA_BASE_URL=https://app.staging.fixahr.com
